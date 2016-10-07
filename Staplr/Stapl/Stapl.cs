@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Staplr.User;
 
 using Android.App;
 using Android.Content;
@@ -16,7 +17,8 @@ namespace Staplr.Stapl
     {
         public Stapl()
         {
-
+            string name;
+            User.User owner;
         }
     }
 }
