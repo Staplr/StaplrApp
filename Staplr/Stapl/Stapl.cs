@@ -14,5 +14,9 @@ namespace Staplr.Stapl
 {
     public class Stapl
     {
+        public Stapl()
+        {
+
+        }
     }
 }
