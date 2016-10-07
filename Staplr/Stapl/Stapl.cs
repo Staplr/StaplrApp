@@ -19,6 +19,8 @@ namespace Staplr.Stapl
         {
             string name;
             User.User owner;
+            List<User.User> upvotes;
+            //List<Comment> comments;
         }
     }
 }
