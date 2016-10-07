@@ -10,19 +10,15 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Staplr.Stapl.Deck
+namespace Staplr.Stapl.Poll
 {
-    public class Flashcard
+    class Response
     {
-        public Flashcard()
+        public Response()
         {
-            string hint;
-            string answer;
-        }
+            string chosenOption;
+            User.User respondant;
 
-        public void Flip()
-        {
-            //flips the flashcard to display the back view
         }
     }
 }

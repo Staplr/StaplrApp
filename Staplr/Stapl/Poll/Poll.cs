@@ -14,5 +14,25 @@ namespace Staplr.Stapl.Poll
 {
     class Poll : Stapl
     {
+        public Poll()
+        {
+            List<string> options;
+        }
+
+        public void CreateOption()
+        {
+
+        }
+
+        public void DisplayResults()
+        {
+            //switch to a results view
+        }
+
+        public void  RecordResponse()
+        {
+            //add response to list of responses
+        }
     }
+
 }
