@@ -12,11 +12,12 @@ using Android.Widget;
 
 namespace Staplr.Stapl.Deck
 {
-    class Deck : Stapl
+    public class Flashcard
     {
-        public Deck()
+        public Flashcard()
         {
-            List<Flashcard> cards;
+            string hint;
+            string answer;
         }
     }
 }

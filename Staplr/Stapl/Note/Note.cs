@@ -14,5 +14,6 @@ namespace Staplr.Stapl.Note
 {
     class Note : Stapl
     {
+        string filepath;
     }
 }
