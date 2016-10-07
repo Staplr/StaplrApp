@@ -12,7 +12,11 @@ using Android.Widget;
 
 namespace Staplr.User
 {
-    class Instructor
+    public class Instructor : User
     {
+        public Instructor() : base()
+        {
+
+        }
     }
 }

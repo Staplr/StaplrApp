@@ -12,7 +12,8 @@ using Android.Widget;
 
 namespace Staplr.User
 {
-    class User
+    public abstract class User
     {
+        
     }
 }
