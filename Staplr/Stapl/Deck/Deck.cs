@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Staplr.Stapl.Deck
 {
-    class Deck
+    class Deck : Stapl
     {
     }
 }
