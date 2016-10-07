@@ -1,13 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-<Button  
-    android:id="@+id/MyButton"
-    android:layout_width="match_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/Hello"
-    />
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1"
+    p1:paddingLeft="50"
+    p1:paddingRight="50"
+    p1:showDividers="none"
+    p1:textAlignment="center"
+    p1:paddingBottom="25"
+    p1:paddingTop="25">
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/space1" />
+    <TextView
+        p1:text="staplr.io"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="33.0dp"
+        p1:id="@+id/textView1"
+        p1:textStyle="bold"
+        p1:layoutDirection="inherit"
+        p1:textAlignment="Center" />
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="18.0dp"
+        p1:id="@+id/space6" />
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/space4" />
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/space5"
+        p1:layout_marginBottom="20.5dp" />
+    <TextView
+        p1:text="username"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView2" />
+    <EditText
+        p1:inputType="textPersonName"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/editText1"
+        p1:hint="your username here" />
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="20.5dp"
+        p1:id="@+id/space3" />
+    <TextView
+        p1:text="pin"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView3" />
+    <EditText
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/editText2"
+        p1:inputType="numberPassword"
+        p1:hint="your pin here" />
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="38.5dp"
+        p1:id="@+id/space2" />
+    <Button
+        p1:text="Sign In"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/button1"
+        p1:onClick="SignIn_Clicked" />
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="38.5dp"
+        p1:id="@+id/space2" />
+    <Button
+        p1:text="Forgot password"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/button2"
+        p1:onClick="ForgotPassword_Clicked" />
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="23.0dp"
+        p1:id="@+id/space7" />
+    <Button
+        p1:text="Create Account"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/button3"
+        p1:onClick="CreateAccount_Clicked" />
 </LinearLayout>
