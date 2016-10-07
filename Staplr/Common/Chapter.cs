@@ -10,9 +10,19 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+using Staplr.Stapl;
+
 namespace Staplr.Common
 {
-    class Chapter
+    public class Chapter
     {
+        public Chapter(String chapterName)
+        {
+            StaplList = new List<Stapl.Stapl>();
+            ChapterName = chapterName;
+        }
+
+        public String ChapterName { get; set; }
+        public List<Stapl.Stapl> StaplList { get; set; }
     }
 }

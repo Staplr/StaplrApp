@@ -8,7 +8,7 @@ using Android.OS;
 
 namespace Staplr
 {
-    [Activity(Label = "Staplr", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Staplr", MainLauncher = true, Icon = "@drawable/staplr")]
     public class MainActivity : Activity
     {
         int count = 1;
