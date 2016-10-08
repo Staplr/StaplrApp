@@ -57,6 +57,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Screens\CourseList.cs" />
+    <Compile Include="Resources\Screens\CourseListAdapter.cs" />
     <Compile Include="Resources\Screens\Dashboard.cs" />
     <Compile Include="Stapl\Comment.cs" />
     <Compile Include="Stapl\Deck\Deck.cs" />
