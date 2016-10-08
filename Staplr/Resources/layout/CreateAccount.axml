@@ -32,6 +32,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText1" />
     <TextView
+        android:text="Name:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6" />
+    <EditText
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText5" />
+    <TextView
         android:text="Email:"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
