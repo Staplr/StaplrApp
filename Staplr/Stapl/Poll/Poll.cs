@@ -16,7 +16,7 @@ namespace Staplr.Stapl.Poll
     {
         public Poll()
         {
-            List<string> options;
+            List<string> Options;
         }
 
         public void CreateOption()

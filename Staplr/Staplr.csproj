@@ -52,6 +52,7 @@
     <Compile Include="Common\Chapter.cs" />
     <Compile Include="Common\Course.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\layout\CourseList.cs" />
     <Compile Include="Resources\layout\Dashboard.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +73,9 @@
     <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\CourseList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
