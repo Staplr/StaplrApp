@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Staplr.Resources.Screens;
 
 namespace Staplr
 {
     [Activity(Label = "Staplr", MainLauncher = true, Icon = "@drawable/staplr")]
     public class MainActivity : Activity
     {
-        int count = 1;
+        //int count = 1;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -28,6 +30,8 @@ namespace Staplr
             signInButton.Click += (object sender, EventArgs e) =>
             {
                 //sign in functionality
+                var intent = new Intent(this, typeof(CourseListActivity));
+                StartActivity(intent);
             };
 
             createAccountButton.Click += (object sender, EventArgs e) =>

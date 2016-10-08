@@ -23,7 +23,7 @@ namespace Staplr.Communication
             RemoteEndpoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 80);
         }
 
-        public static async void SendMessage(Message message)
+        public static void SendMessage(Message message)
         {
             //HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(url));
             //request.ContentType = "application/json";
