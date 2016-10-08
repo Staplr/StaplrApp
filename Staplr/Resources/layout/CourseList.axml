@@ -3,7 +3,7 @@
     p1:orientation="vertical"
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
-    p1:id="@+id/linearLayout1"
+    p1:id="@+id/CourseList"
     p1:paddingLeft="50px"
     p1:paddingRight="50px"
     p1:paddingBottom="25px"
@@ -13,7 +13,8 @@
         p1:textAppearance="?android:attr/textAppearanceLarge"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/BackText" />
+        p1:id="@+id/BackText"
+        p1:width="80px" />
     <ExpandableListView
         p1:minWidth="25px"
         p1:minHeight="25px"

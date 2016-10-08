@@ -18,6 +18,7 @@ namespace Staplr.Resources.Screens
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
             //this.ListAdapter = new ArrayAdapters<string>(this, Android.Resource.Layout.SimpleListItem1, test
         }
     }

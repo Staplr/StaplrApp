@@ -32,6 +32,7 @@ namespace Staplr
                 //sign in functionality
                 var intent = new Intent(this, typeof(CourseListActivity));
                 StartActivity(intent);
+                SetContentView(Resource.Layout.CourseList);
             };
 
             createAccountButton.Click += (object sender, EventArgs e) =>

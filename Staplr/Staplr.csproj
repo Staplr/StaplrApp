@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="Common\Chapter.cs" />
     <Compile Include="Common\Course.cs" />
-    <Compile Include="Communication\Communicator.cs" />
     <Compile Include="Resources\Screens\CourseListActivity.cs" />
     <Compile Include="Resources\Screens\MainActivity.cs" />
     <Compile Include="Communication\StaplrestClient.cs" />
