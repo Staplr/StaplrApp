@@ -27,12 +27,11 @@ namespace Staplr
             Button createAccountButton = FindViewById<Button>(Resource.Id.createAccountButton);
             Button forgotPasswordButton = FindViewById<Button>(Resource.Id.forgotPasswordButton);
 
-            signInButton.Click += (object sender, EventArgs e) =>
+            signInButton.Click += delegate
             {
                 //sign in functionality
                 var intent = new Intent(this, typeof(CourseListActivity));
                 StartActivity(intent);
-                SetContentView(Resource.Layout.CourseList);
             };
 
             createAccountButton.Click += (object sender, EventArgs e) =>
