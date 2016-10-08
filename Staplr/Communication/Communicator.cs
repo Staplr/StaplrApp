@@ -20,29 +20,33 @@ namespace Staplr.Communication
     {
         public Communicator()
         {
-            RemoteEndpoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 80);
+            RemoteUrl = "staplr.me";
         }
 
+<<<<<<< HEAD
         public static void SendMessage(Message message)
+=======
+        public async void SendMessage(Message message)
+>>>>>>> 6800d8577e1c81a22015466bca1a9cab95c7621d
         {
-            //HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(url));
-            //request.ContentType = "application/json";
-            //request.Method = "GET";
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(RemoteUrl));
+            request.ContentType = "application/json";
+            request.Method = "GET";
 
-            //// Send the request to the server and wait for the response:
-            //using (WebResponse response = await request.GetResponseAsync())
-            //{
-            //    // Get a stream representation of the HTTP web response:
-            //    using (Stream stream = response.GetResponseStream())
-            //    {
-            //        // Use this stream to build a JSON document object:
-            //        JsonValue jsonDoc = await Task.Run(() => JsonObject.Load(stream));
-            //        Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
+            // Send the request to the server and wait for the response:
+            using (WebResponse response = await request.GetResponseAsync())
+            {
+                // Get a stream representation of the HTTP web response:
+                using (Stream stream = response.GetResponseStream())
+                {
+                    // Use this stream to build a JSON document object:
+                    JsonValue jsonDoc = await Task.Run(() => JsonObject.Load(stream));
+                    Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
 
-            //        //// Return the JSON document:
-            //        //return jsonDoc;
-            //    }
-            //}
+                    //// Return the JSON document:
+                    //return jsonDoc;
+                }
+            }
         }
 
         // Parse the weather data, then write temperature, humidity, 
@@ -79,6 +83,6 @@ namespace Staplr.Communication
             //conditions.Text = cloudy + " " + cond;
         }
 
-        public IPEndPoint RemoteEndpoint { get; set; }
+        public String RemoteUrl { get; set; }
     }
 }

@@ -37,7 +37,9 @@ namespace Staplr.Common
             return returnList;
         }
 
+        public int ChapterId { get; set; }
         public String ChapterName { get; set; }
+        public String Description { get; set; }
         public List<Stapl.Stapl> StaplList { get; set; }
     }
 }

@@ -35,6 +35,7 @@ namespace Staplr.Common
         public List<String> AssistantList { get; set; }
         public List<Chapter> ChapterList { get; set; }
         public String CourseInstructor { get; set; }
+        public String Description { get; set; }
 
         protected static int CourseCounter
         {
