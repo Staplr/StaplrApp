@@ -63,6 +63,15 @@ namespace Staplr.Communication
             return request;
         }
 
+        public static HttpWebRequest GetAllUsers()
+        {
+            String remoteString = RemoteUrl + "users/";
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            return request;
+        }
+
         public static HttpWebRequest CreateCourse(Course course)
         {
             String remoteString = RemoteUrl + "course/";
@@ -81,6 +90,15 @@ namespace Staplr.Communication
             String remoteString = RemoteUrl + "course/";
             remoteString += "JSON?course_id=" + courseId.ToString();
 
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "DELETE";
+            return request;
+        }
+
+        public static HttpWebRequest GetAllCourses()
+        {
+            String remoteString = RemoteUrl + "course/";
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "DELETE";
@@ -119,6 +137,67 @@ namespace Staplr.Communication
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
+            return request;
+        }
+
+        public static HttpWebRequest CreateChapter(int courseId, Chapter chapter)
+        {
+            String remoteString = RemoteUrl + "chapter/";
+            remoteString += "JSON?course_id=" + courseId.ToString();
+            remoteString += "description=" + chapter.Description;
+            remoteString += "name=" + chapter.ChapterName;
+
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+            return request;
+        }
+
+        public static HttpWebRequest GetChapter(int chapterId)
+        {
+            String remoteString = RemoteUrl + "chapter_from_id/";
+            remoteString += "JSON?chapter_id=" + chapterId.ToString();
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+            return request;
+        }
+
+        public static HttpWebRequest GetChapterFromCourse(int courseId)
+        {
+            String remoteString = RemoteUrl + "chapter_from_id/";
+            remoteString += "JSON?course_id=" + courseId.ToString();
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+            return request;
+        }
+
+        public static HttpWebRequest DeleteChapter(int chapterId)
+        {
+            String remoteString = RemoteUrl + "chapter/";
+            remoteString += "JSON?chapter_id=" + chapterId.ToString();
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "DELETE";
+            return request;
+        }
+
+        public static HttpWebRequest GetAllChapters()
+        {
+            String remoteString = RemoteUrl + "chapter/";
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            return request;
+        }
+
+        public static HttpWebRequest GetAllStapls()
+        {
+            String remoteString = RemoteUrl + "stapls/";
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "GET";
             return request;
         }
 
