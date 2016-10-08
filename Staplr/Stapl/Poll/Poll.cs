@@ -33,6 +33,9 @@ namespace Staplr.Stapl.Poll
         {
             //add response to list of responses
         }
+
+        public List<String> OptionDescription { get; set; }
+        public Dictionary<String, int> StudentResponses { get; set; }
     }
 
 }

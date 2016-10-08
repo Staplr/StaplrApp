@@ -16,7 +16,9 @@ namespace Staplr.User
     {
         public Instructor() : base()
         {
-
+            CoursesTaught = new List<int>();
         }
+
+        public List<int> CoursesTaught { get; set; }
     }
 }
