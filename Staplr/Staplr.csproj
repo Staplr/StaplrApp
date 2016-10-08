@@ -56,8 +56,12 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stapl\Deck\Deck.cs" />
+    <Compile Include="Stapl\Deck\Flashcard.cs" />
     <Compile Include="Stapl\Note\Note.cs" />
     <Compile Include="Stapl\Poll\Poll.cs" />
+    <Compile Include="Stapl\Poll\PollConcreteType.cs" />
+    <Compile Include="Stapl\Poll\PollDecorator.cs" />
+    <Compile Include="Stapl\Poll\Response.cs" />
     <Compile Include="Stapl\Stapl.cs" />
     <Compile Include="User\Assistant.cs" />
     <Compile Include="User\Instructor.cs" />

@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Staplr.Stapl.Poll
 {
-    class Poll : Stapl
+    public class Poll : Stapl
     {
         public Poll()
         {

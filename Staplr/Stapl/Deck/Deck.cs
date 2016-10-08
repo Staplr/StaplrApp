@@ -19,7 +19,7 @@ namespace Staplr.Stapl.Deck
             List<Flashcard> cards;
         }
 
-        public Shuffle()
+        public void Shuffle()
         {
             //randomizes the order of the flashcards for display to user
         }

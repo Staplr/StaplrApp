@@ -12,12 +12,12 @@ using Android.Widget;
 
 namespace Staplr.Stapl.Poll
 {
-    class Response
+    public class Response
     {
         public Response()
         {
-            string chosenOption;
-            User.User respondant;
+            string ChosenOption;
+            User.User Respondant;
 
         }
     }
