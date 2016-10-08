@@ -53,13 +53,9 @@
     <Compile Include="Common\Chapter.cs" />
     <Compile Include="Common\Course.cs" />
     <Compile Include="Communication\Communicator.cs" />
-<<<<<<< HEAD
     <Compile Include="Resources\Screens\CourseListActivity.cs" />
     <Compile Include="Resources\Screens\MainActivity.cs" />
-=======
     <Compile Include="Communication\StaplrestClient.cs" />
-    <Compile Include="MainActivity.cs" />
->>>>>>> 6800d8577e1c81a22015466bca1a9cab95c7621d
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Screens\CourseList.cs" />
