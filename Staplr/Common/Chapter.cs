@@ -22,6 +22,21 @@ namespace Staplr.Common
             ChapterName = chapterName;
         }
 
+        public List<T> GetStapleType<T>() where T : Stapl.Stapl
+        {
+            List<T> returnList = new List<T>();
+
+            for (int i = 0; i < StaplList.Count; i++)
+            {
+                if (typeof(T) == StaplList[i].GetType())
+                {
+                    returnList.Add((T)StaplList[i]);
+                }
+            }
+
+            return returnList;
+        }
+
         public String ChapterName { get; set; }
         public List<Stapl.Stapl> StaplList { get; set; }
     }

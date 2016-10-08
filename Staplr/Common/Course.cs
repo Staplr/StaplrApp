@@ -16,16 +16,33 @@ namespace Staplr.Common
 {
     public class Course
     {
-        public Course()
+        private Course(int id)
         {
-            StudentList = new List<Student>();
-            AssistantList = new List<Assistant>();
-            CourseInstructor = new Instructor();
+            StudentList = new List<String>();
+            AssistantList = new List<String>();
+            ChapterList = new List<Chapter>();
+            CourseInstructor = "";
+        }
+
+        public static Course CreateNewCourse()
+        {
+            return new Course(CourseCounter);
         }
 
         public String CourseName { get; set; }
-        public List<Student> StudentList { get; set; }
-        public List<Assistant> AssistantList { get; set; }
-        public Instructor CourseInstructor { get; set; }
+        public int Id { get; set; }
+        public List<String> StudentList { get; set; }
+        public List<String> AssistantList { get; set; }
+        public List<Chapter> ChapterList { get; set; }
+        public String CourseInstructor { get; set; }
+
+        protected static int CourseCounter
+        {
+            get
+            {
+                return __CourseCounter++;
+            }
+        }
+        private volatile static int __CourseCounter = 0;
     }
 }

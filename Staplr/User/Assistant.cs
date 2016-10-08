@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+using Staplr.Common;
+
 namespace Staplr.User
 {
     public class Assistant : User
@@ -18,5 +20,6 @@ namespace Staplr.User
         {
 
         }
+
     }
 }

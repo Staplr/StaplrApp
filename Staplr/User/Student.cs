@@ -16,7 +16,6 @@ namespace Staplr.User
     {
         public Student() : base()
         {
-
         }
     }
 }
