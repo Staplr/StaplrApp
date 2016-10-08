@@ -41,10 +41,10 @@ namespace Staplr.Communication
             return SendRequest(request).Result;
         }
 
-        public static JsonValue DeleteUser(User.User user)
+        public static JsonValue DeleteUser(int userId)
         {
             String remoteString = RemoteUrl + "users/";
-            remoteString += "JSON?id=" + user.UserId.ToString();
+            remoteString += "JSON?id=" + userId.ToString();
 
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
