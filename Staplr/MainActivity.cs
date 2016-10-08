@@ -18,8 +18,27 @@ namespace Staplr
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Login);
+            SetContentView(Resource.Layout.Main);
+            EditText usernameEditText = FindViewById<EditText>(Resource.Id.usernameEditText);
+            EditText pinEditText = FindViewById<EditText>(Resource.Id.pinEditText);
+            Button signInButton = FindViewById<Button>(Resource.Id.signInButton);
+            Button createAccountButton = FindViewById<Button>(Resource.Id.createAccountButton);
+            Button forgotPasswordButton = FindViewById<Button>(Resource.Id.forgotPasswordButton);
 
+            signInButton.Click += (object sender, EventArgs e) =>
+            {
+                //sign in functionality
+            };
+
+            createAccountButton.Click += (object sender, EventArgs e) =>
+            {
+                //switch to account creation screen
+            };
+
+            forgotPasswordButton.Click += (object sender, EventArgs e) =>
+            {
+                //switch to forgot password screen
+            };
             //// Get our button from the layout resource,
             //// and attach an event to it
             //Button button = FindViewById<Button>(Resource.Id.MyButton);
