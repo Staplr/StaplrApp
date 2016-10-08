@@ -27,7 +27,7 @@ namespace Staplr.Communication
             RemoteUrl = "staplr.me/api/";
         }
 
-        public static HttpWebRequest CreateNewUser(User.User user, String password)
+        public static JsonValue CreateNewUser(User.User user, String password)
         {
             String remoteString = RemoteUrl + "users/";
             remoteString += "JSON?username=" + user.Username;
@@ -38,10 +38,10 @@ namespace Staplr.Communication
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest DeleteUser(User.User user)
+        public static JsonValue DeleteUser(User.User user)
         {
             String remoteString = RemoteUrl + "users/";
             remoteString += "JSON?id=" + user.UserId.ToString();
@@ -49,10 +49,10 @@ namespace Staplr.Communication
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "DELETE";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest GetUser(int userId)
+        public static JsonValue GetUser(int userId)
         {
             String remoteString = RemoteUrl + "users/";
             remoteString += "JSON?id=" + userId.ToString();
@@ -60,32 +60,32 @@ namespace Staplr.Communication
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest GetAllUsers()
+        public static JsonValue GetAllUsers()
         {
             String remoteString = RemoteUrl + "users/";
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "GET";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest CreateCourse(Course course)
+        public static JsonValue CreateCourse(Course course)
         {
             String remoteString = RemoteUrl + "course/";
             remoteString += "JSON?instructor_Id=" + course.CourseInstructor.ToString();
-            remoteString += "description=" + course.Description;
-            remoteString += "name=" + course.CourseName;
+            remoteString += "&description=" + course.Description;
+            remoteString += "&name=" + course.CourseName;
 
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "DELETE";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest DeleteCourse(int courseId)
+        public static JsonValue DeleteCourse(int courseId)
         {
             String remoteString = RemoteUrl + "course/";
             remoteString += "JSON?course_id=" + courseId.ToString();
@@ -93,43 +93,43 @@ namespace Staplr.Communication
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "DELETE";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest GetAllCourses()
+        public static JsonValue GetAllCourses()
         {
             String remoteString = RemoteUrl + "course/";
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "DELETE";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest AddStudentToCourse(int userId, int courseId)
+        public static JsonValue AddStudentToCourse(int userId, int courseId)
         {
             String remoteString = RemoteUrl + "add_to_course/";
             remoteString += "JSON?student_id=" + userId.ToString();
-            remoteString += "course_id=" + courseId.ToString();
+            remoteString += "&course_id=" + courseId.ToString();
 
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest RemoveStudentFromCourse(int userId, int courseId)
+        public static JsonValue RemoveStudentFromCourse(int userId, int courseId)
         {
             String remoteString = RemoteUrl + "remove_from_course/";
             remoteString += "JSON?student_id=" + userId.ToString();
-            remoteString += "course_id=" + courseId.ToString();
+            remoteString += "&course_id=" + courseId.ToString();
 
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest GetCourse(int courseId)
+        public static JsonValue GetCourse(int courseId)
         {
             String remoteString = RemoteUrl + "course_from_id/";
             remoteString += "JSON?course_id=" + courseId.ToString();
@@ -137,76 +137,127 @@ namespace Staplr.Communication
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest CreateChapter(int courseId, Chapter chapter)
+        public static JsonValue CreateChapter(int courseId, Chapter chapter)
         {
             String remoteString = RemoteUrl + "chapter/";
             remoteString += "JSON?course_id=" + courseId.ToString();
-            remoteString += "description=" + chapter.Description;
-            remoteString += "name=" + chapter.ChapterName;
+            remoteString += "&description=" + chapter.Description;
+            remoteString += "&name=" + chapter.ChapterName;
 
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest GetChapter(int chapterId)
+        public static JsonValue GetChapter(int chapterId)
         {
             String remoteString = RemoteUrl + "chapter_from_id/";
             remoteString += "JSON?chapter_id=" + chapterId.ToString();
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest GetChapterFromCourse(int courseId)
+        public static JsonValue GetAllChaptersByCourse(int courseId)
+        {
+            String remoteString = RemoteUrl + "chapter_from_course/";
+            remoteString += "JSON?course_id=" + courseId.ToString();
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+            return SendRequest(request).Result;
+        }
+        
+        public static JsonValue GetChapterFromCourse(int courseId)
         {
             String remoteString = RemoteUrl + "chapter_from_id/";
             remoteString += "JSON?course_id=" + courseId.ToString();
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "POST";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest DeleteChapter(int chapterId)
+        public static JsonValue DeleteChapter(int chapterId)
         {
             String remoteString = RemoteUrl + "chapter/";
             remoteString += "JSON?chapter_id=" + chapterId.ToString();
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "DELETE";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest GetAllChapters()
+        public static JsonValue GetAllChapters()
         {
             String remoteString = RemoteUrl + "chapter/";
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "GET";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static HttpWebRequest GetAllStapls()
+        public static JsonValue GetAllStapls()
         {
             String remoteString = RemoteUrl + "stapls/";
             HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "GET";
-            return request;
+            return SendRequest(request).Result;
         }
 
-        public static async void SendMessage(Message message)
+        public static JsonValue DeleteStapl(int staplId)
         {
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(RemoteUrl));
+            String remoteString = RemoteUrl + "stapls/";
+            remoteString += "JSON?stapl_id=" + staplId.ToString();
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
             request.ContentType = "application/json";
             request.Method = "GET";
+            return SendRequest(request).Result;
+        }
 
+        public static JsonValue CreateNewPoll(int chapterId, List<String> optionList, int userId)
+        {
+            String remoteString = RemoteUrl + "poll_from_chapter/";
+            remoteString += "JSON?chapter_id=" + chapterId.ToString();
+            remoteString += "&user_id=" + userId.ToString();
+            for (int i = 0; i < optionList.Count; i++)
+            {
+                remoteString += "&options=" + optionList[i];
+            }
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+            return SendRequest(request).Result;
+        }
+
+        public static JsonValue DeactivatePoll(int staplId)
+        {
+            String remoteString = RemoteUrl + "poll_inactive/";
+            remoteString += "JSON?stapl_id=" + staplId.ToString();
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+            return SendRequest(request).Result;
+        }
+
+        public static JsonValue GetPollResults(int staplId)
+        {
+            String remoteString = RemoteUrl + "poll_inactive/";
+            remoteString += "JSON?stapl_id=" + staplId.ToString();
+            HttpWebRequest request = new HttpWebRequest(new Uri(remoteString));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+            return SendRequest(request).Result;
+        }
+
+        public static async Task<JsonValue> SendRequest(HttpWebRequest request)
+        {
             // Send the request to the server and wait for the response:
             using (WebResponse response = await request.GetResponseAsync())
             {
@@ -217,43 +268,10 @@ namespace Staplr.Communication
                     JsonValue jsonDoc = await Task.Run(() => JsonObject.Load(stream));
                     Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
 
-                    //// Return the JSON document:
-                    //return jsonDoc;
+                    // Return the JSON document:
+                    return jsonDoc;
                 }
             }
-        }
-
-        // Parse the weather data, then write temperature, humidity, 
-        // conditions, and location to the screen.
-        private static void ParseAndDisplay(JsonValue json)
-        {
-            // Extract the array of name/value results for the field name "weatherObservation". 
-            JsonValue weatherResults = json["weatherObservation"];
-            //// Extract the "stationName" (location string) and write it to the location TextBox:
-            //location.Text = weatherResults["stationName"];
-
-            //// The temperature is expressed in Celsius:
-            //double temp = weatherResults["temperature"];
-            //// Convert it to Fahrenheit:
-            //temp = ((9.0 / 5.0) * temp) + 32;
-            //// Write the temperature (one decimal place) to the temperature TextBox:
-            //temperature.Text = String.Format("{0:F1}", temp) + "° F";
-
-            //// Get the percent humidity and write it to the humidity TextBox:
-            //double humidPercent = weatherResults["humidity"];
-            //humidity.Text = humidPercent.ToString() + "%";
-
-            //// Get the "clouds" and "weatherConditions" strings and 
-            //// combine them. Ignore strings that are reported as "n/a":
-            //string cloudy = weatherResults["clouds"];
-            //if (cloudy.Equals("n/a"))
-            //    cloudy = "";
-            //string cond = weatherResults["weatherCondition"];
-            //if (cond.Equals("n/a"))
-            //    cond = "";
-
-            //// Write the result to the conditions TextBox:
-            //conditions.Text = cloudy + " " + cond;
         }
 
         public static String RemoteUrl { get; set; }
