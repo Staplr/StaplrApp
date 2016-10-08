@@ -17,10 +17,6 @@ namespace Staplr.Stapl
     {
         public Stapl()
         {
-            string Name;
-            User.User Owner;
-            List<User.User> Upvotes;
-            //List<Comment> comments;
         }
 
         public String Title { get; set; }

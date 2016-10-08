@@ -45,17 +45,19 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Json" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Chapter.cs" />
     <Compile Include="Common\Course.cs" />
+    <Compile Include="Communication\Communicator.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\layout\CourseList.cs" />
-    <Compile Include="Resources\layout\Dashboard.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Screens\CourseList.cs" />
+    <Compile Include="Resources\Screens\Dashboard.cs" />
     <Compile Include="Stapl\Comment.cs" />
     <Compile Include="Stapl\Deck\Deck.cs" />
     <Compile Include="Stapl\Deck\Card.cs" />
@@ -63,7 +65,6 @@
     <Compile Include="Stapl\Poll\Poll.cs" />
     <Compile Include="Stapl\Poll\PollConcreteType.cs" />
     <Compile Include="Stapl\Poll\PollDecorator.cs" />
-    <Compile Include="Stapl\Poll\Response.cs" />
     <Compile Include="Stapl\Stapl.cs" />
     <Compile Include="User\Instructor.cs" />
     <Compile Include="User\Student.cs" />
@@ -76,11 +77,10 @@
     <AndroidResource Include="Resources\layout\CourseList.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CreateAccount.axml" />
+    <AndroidResource Include="Resources\layout\CreateStapl.axml" />
+    <AndroidResource Include="Resources\layout\Login.axml" />
+    <AndroidResource Include="Resources\layout\StaplView.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml">
@@ -95,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\staplr.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Communication\Messages\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
