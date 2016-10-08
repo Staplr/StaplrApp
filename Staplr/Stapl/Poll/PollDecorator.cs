@@ -12,8 +12,17 @@ using Android.Widget;
 
 namespace Staplr.Stapl.Poll
 {
-    public class PollDecorator : Poll
+    public static class PollDecorator
     {
-        Poll basePoll = null;
+        static PollDecorator()
+        {
+
+        }
+
+        public static void AddComponent(Poll poll)
+        {
+            // TODO: Add code to do something
+        }
+
     }
 }

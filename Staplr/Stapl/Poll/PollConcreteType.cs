@@ -12,12 +12,12 @@ using Android.Widget;
 
 namespace Staplr.Stapl.Poll
 {
-    class BarChart : Poll
+    public class BarChart : Poll
     {
 
     }
 
-    class PieChart : Poll
+    public class PieChart : Poll
     {
 
     }
