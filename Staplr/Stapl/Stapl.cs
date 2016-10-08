@@ -22,5 +22,10 @@ namespace Staplr.Stapl
             List<User.User> Upvotes;
             //List<Comment> comments;
         }
+
+        public String Title { get; set; }
+        public bool IsPublic { get; set; }
+        public bool CommentsAllowed { get; set; }
+        public List<Comment> CommentList { get; set; }
     }
 }

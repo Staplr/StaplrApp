@@ -12,8 +12,13 @@ using Android.Widget;
 
 namespace Staplr.Stapl.Note
 {
-    class Note : Stapl
+    public class Note : Stapl
     {
-        string Filepath;
+        public Note()
+        {
+
+        }
+        public String Content { get; set; }
     }
+
 }

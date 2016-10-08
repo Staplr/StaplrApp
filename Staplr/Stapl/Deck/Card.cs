@@ -12,17 +12,20 @@ using Android.Widget;
 
 namespace Staplr.Stapl.Deck
 {
-    public class Flashcard
+    public class Card
     {
-        public Flashcard()
+        public Card()
         {
-            string hint;
-            string answer;
         }
 
         public void Flip()
         {
             //flips the flashcard to display the back view
         }
+
+        public String Hint { get; set; }
+        public String Answer { get; set; }
+        public String Owner { get; set; }
+        public int Upvotes { get; set; }
     }
 }

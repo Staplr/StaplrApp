@@ -16,12 +16,23 @@ namespace Staplr.Stapl.Deck
     {
         public Deck()
         {
-            List<Flashcard> cards;
+            CardList = new List<Card>();
         }
 
         public void Shuffle()
         {
-            //randomizes the order of the flashcards for display to user
+            Random randomNumberGenerator = new Random(DateTime.Now.Millisecond);
+
+            for (int i = 0; i < CardList.Count; i++)
+            {
+                int index1 = randomNumberGenerator.Next(0, CardList.Count - 1);
+                int index2 = randomNumberGenerator.Next(0, CardList.Count - 1);
+                Card tempCard = CardList[index1];
+                CardList[index1] = CardList[index2];
+                CardList[index2] = tempCard;
+            }
         }
+
+        public List<Card> CardList { get; set; }
     }
 }

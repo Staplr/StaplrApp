@@ -10,16 +10,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-using Staplr.Common;
-
-namespace Staplr.User
+namespace Staplr.Stapl
 {
-    public class Assistant : User
+    public class Comment
     {
-        public Assistant() : base()
+        public Comment()
         {
 
         }
 
+        public String Content { get; set; }
+        public String Owner { get; set; }
+        public DateTime Timestamp { get; set; }
     }
 }
